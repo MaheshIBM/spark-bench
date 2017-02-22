@@ -15,7 +15,8 @@ export BENCH_VERSION="2.0"
 [ -f "${BENCH_HOME}/bin/funcs.sh" ] &&    . "${BENCH_HOME}/bin/funcs.sh"
 
 
-export BENCH_NUM=${BENCH_HOME}/num;
+[ -z "$BENCH_NUM" ] && export BENCH_NUM=${BENCH_NUM};
+
 if [ ! -d ${BENCH_NUM} ]; then
 	mkdir -p ${BENCH_NUM};
 	mkdir -p ${BENCH_NUM}/old;
